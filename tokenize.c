@@ -1,17 +1,20 @@
-#include "shell.h"
+#include "shell.h"
+#include <stddef.h>
+#include <stdlib.h>
+
 /**
  * tokenize - tokenizes a buffer with a delimiter
  * @buffer: buffer to tokenize
  * @delimiter: delimiter to tokenize along
  * Return: pointer to an array of pointers to the tokens
  */
-char **tokenize(char *buffer, char *delimiter)
+char **tokenize(char *buffer, char *delimiter)
 {
-	char **tokens = NULL;
-	size_t i = 0, mcount = 10;
+	char **tokens = NULL;
+	size_t i = 0, mcount = 10;
 
-	if (buffer == NULL)
-		return (NULL);
+	if (buffer == NULL)
+		return (NULL);
 	tokens = malloc(sizeof(char *) * mcount);
 	if (tokens == NULL)
 	{
