@@ -136,7 +136,7 @@ int execute_cwd(vars_t *vars)
 			else
 			{
 				wait(&vars->status);
-				if (WIEXITED(vars->status))
+				if (WIFEXITED(vars->status))
 					vars->status = WEXITSTATUS(vars->status);
 				else if (WIFSIGNALED(vars->status) && WTERMSIG(vars->status) == SIGINT)
 					vars->status = 130;
