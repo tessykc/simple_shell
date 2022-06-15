@@ -8,7 +8,7 @@
 ssize_t _puts(char *str)
 {
 	ssize_t num, len;
-	
+
 	num = _strlen(str);
 	len = write(STDOUT_FILENO, str, num);
 	if (len != num)
@@ -26,9 +26,9 @@ ssize_t _puts(char *str)
 char *_strdup(char *strtodup)
 {
 	char *copy;
-	
+
 	int len, i;
-	
+
 	if (strtodup == 0)
 		return (NULL);
 	for (len = 0; strtodup[len]; len++)
@@ -47,7 +47,7 @@ char *_strdup(char *strtodup)
 int _strcmpr(char *strcmp1, char *strcmp2)
 {
 	int i;
-	
+
 	i = 0;
 	while (strcmp1[i] == strcmp2[i])
 	{
@@ -67,7 +67,7 @@ char *_strcat(char *strc1, char *strc2)
 {
 	char *newstring;
 	unsigned int len1, len2, newlen, i, j;
-	
+
 	len1 = 0;
 	len2 = 0;
 	if (strc1 == NULL)
@@ -105,7 +105,7 @@ char *_strcat(char *strc1, char *strc2)
 unsigned int _strlen(char *str)
 {
 	unsigned int len;
-	
+
 	len = 0;
 
 	for (len = 0; str[len]; len++)
