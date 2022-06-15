@@ -15,25 +15,25 @@ char **tokenize(char *buffer, char *delimiter)
 
 	if (buffer == NULL)
 		return (NULL);
-	tokens = malloc(sizeof(char *) * mcount);
-	if (tokens == NULL)
+	tokens = malloc(sizeof(char *) * mcount);
+	if (tokens == NULL)
 	{
 		perror("Fatal Error");
-		return (NULL);
+		return (NULL);
 	}
-	while ((tokens[i] = new_strtok(buffer, delimiter)) != NULL)
+	while ((tokens[i] = new_strtok(buffer, delimiter)) != NULL)
 	{
 		i++;
-		if (i == mcount)
+		if (i == mcount)
 		{
-			tokens = _realloc(tokens, &mcount);
-			if (tokens == NULL)
+			tokens = _realloc(tokens, &mcount);
+			if (tokens == NULL)
 			{
 				perror("Fatal Error");
-				return (NULL);
+				return (NULL);
 			}
 		}
-		buffer = NULL;
+		buffer = NULL;
 	}
-	return (tokens);
+	return (tokens);
 }
